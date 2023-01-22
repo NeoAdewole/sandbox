@@ -1,0 +1,14 @@
+body {
+  background-color: bisque;
+}
+
+.wp-site-blocks {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.wp-site-blocks .wp-block-template-part h1.wp-block-site-title {
+  size: 200%;
+  color: teal;
+  text-decoration: none;
+}
