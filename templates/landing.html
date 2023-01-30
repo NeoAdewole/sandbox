@@ -1,27 +1,27 @@
-<!-- wp:template-part {"slug":"header","tagName":"header","className":"landing-header","layout":{"type":"flex"}} /-->
-<!-- wp:group {"tagName":"main","layout":{"type":"constrained"},"displayLayout":{"type":"flex"}} -->
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"landing-header","layout":{"type":"constrained"}} /-->
+<!-- wp:group {"tagName":"main","displayLayout":{"type":"flex","columns":3},"layout":{"type":"constrained"}} -->
   <main class="wp-block-group">
-    <div>Landing sturvz</div>
     <!-- wp:post-content /-->
-    <div class="wp-block-columns has-background">
-      <!-- wp:post-template {"displayLayout":{"type":"flex","columns":3},"layout":{"type":"flex","columns":"3"},"style":{"color":{"background":"red"}},"className":"wp-block-columns column-3"} -->
-        <!-- wp:post-featured-image /-->
-        <!-- wp:post-title {"isLink":true} /-->
-        <!-- wp:post-author {"showAvatar":true} /-->
-        <!-- wp:post-date /-->
-        <!-- wp:post-excerpt /-->
-        <!-- wp:post-terms {"term":"category"} /-->
-      <!-- /wp:post-template -->
-      <!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"space-between"}} -->
-        <div class="wp-block-query-pagination">
-          <!-- wp:query-pagination-previous /-->
-          <!-- wp:query-pagination-next /-->
-        </div>
-      <!-- /wp:query-pagination -->
-    </div>
-    <!-- wp:buttons -->
-      <!-- wp:button {"title":"My Block Button","align":"right","linkTarget":"_blank","anchor":"#top","url":"https://niyiadewole.ca"} /-->
+    <!-- wp:heading {"level":3} -->
+      <h3>Regular ol' LANDING template</h3>
+    <!-- /wp:heading -->
+    <!-- wp:heading {"level":3} -->
+      <h3>Landing sturvz</h3>
+    <!-- /wp:heading -->
+
+    <!-- wp:post-template {"style":{"color":{"background":"red"}},"className":"is-flex-container columns-3"} -->
+      <!-- wp:post-featured-image /-->
+      <!-- wp:post-title {"isLink":true} /-->
+      <!-- wp:post-author {"showAvatar":true} /-->
+      <!-- wp:post-date /-->
+      <!-- wp:post-excerpt /-->
+      <!-- wp:post-terms {"term":"category"} /-->
+    <!-- /wp:post-template -->
+    
+    <!-- wp:buttons {"align":"wide"} -->
+      <div class="wp-block-buttons alignwide"><!-- wp:button {"align":"right","title":"My template button","url":"https://niyiadewole.ca"} /--></div>
     <!-- /wp:buttons -->
+    <!-- wp:categories /-->
   </main>
-  <!-- /wp:group -->
+<!-- /wp:group -->
 <!-- wp:template-part {"slug":"footer","tagName":"footer", "style":{"color":{"background":"#2d2d2d"}} } /-->
