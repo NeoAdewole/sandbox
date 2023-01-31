@@ -1,7 +1,39 @@
+<hr>
 <!-- wp:group {"layout":{"type":"constrained","justifyContent":"space-between"}} -->
-  <div class="wp-block-group">
-    <!-- wp:heading {"level":5} -->
-      <h5>Footer</h5>
-    <!-- /wp:heading -->
+<div class="wp-block-group">
+  <!-- wp:heading {"level":3} -->
+  <h3>Footer</h3>
+  <!-- /wp:heading -->
+
+  <!-- wp:columns {"verticalAlignment":null} -->
+  <div class="wp-block-columns">
+    <!-- wp:column -->
+    <div class="wp-block-column">
+      <!-- wp:site-logo {"align":"center"} /-->      
+      <!-- wp:site-tagline /-->
+    </div>
+    <!-- /wp:column -->
+
+    <!-- wp:column {"verticalAlignment":"center"} -->
+      <div class="wp-block-column is-vertically-aligned-center"><!-- wp:social-links -->
+        <ul class="wp-block-social-links">
+          <!-- wp:social-link {"service":"instagram"} /-->    
+          <!-- wp:social-link {"service":"twitter"} /-->    
+          <!-- wp:social-link {"service":"facebook"} /-->    
+          <!-- wp:social-link {"service":"linkedin"} /-->
+        </ul>
+        <!-- /wp:social-links -->
+      </div>
+    <!-- /wp:column -->
+
+    <!-- wp:column -->
+      <div class="wp-block-column">
+        <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+          <div class="wp-block-group"><!-- wp:page-list /--></div>
+        <!-- /wp:group -->
+      </div>
+    <!-- /wp:column -->
   </div>
+  <!-- /wp:columns -->
+</div>
 <!-- /wp:group -->
