@@ -4,6 +4,37 @@
     "layout": {
       "contentSize": "840px",
       "wideSize": "1100px"
+    },
+    "color": {
+      "defaultPalette": true,
+      "defaultGradients": false,
+      "duotone": [
+        {
+          "colors": [
+            "#000",
+            "#FFF"
+          ],
+          "slug": "black-and-white",
+          "name": "Black and White"
+        }
+      ],
+      "palette": [
+        {
+          "name": "Blackish",
+          "slug": "black",
+          "color": "#000000"
+        },
+        {
+          "name": "Whiteish",
+          "slug": "white",
+          "color": "#ffffff"
+        },
+        {
+          "name": "Purple",
+          "slug": "white",
+          "color": "#663399"
+        }
+      ]
     }
   }
 }
