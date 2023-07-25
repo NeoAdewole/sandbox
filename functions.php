@@ -57,3 +57,28 @@ function sandbox_styles()
   );
 }
 add_action('wp_enqueue_scripts', 'sandbox_styles');
+
+// Custom ACF functions for block theme
+/**
+ * Add 'custom Settings' page to WP admin Settings menu
+ */
+if (function_exists('acf_add_options_page')) {
+  acf_add_options_page(array(
+    'parent_slug'   => 'options-general.php',
+    'page_title'    => __('Custom Settings'),
+    'menu_title'    => __('Custom Settings'),
+    'menu_slug'     => 'custom-theme-settings',
+    'capability'    => 'edit_posts',
+    'redirect'      => false
+  ));
+  // acf_add_options_sub_page(array(
+  //     'page_title'    => 'Theme Header Settings',
+  //     'menu_title'    => 'Header',
+  //     'parent_slug'   => 'theme-general-settings',
+  // ));
+  // acf_add_options_sub_page(array(
+  //     'page_title'    => 'Theme Footer Settings',
+  //     'menu_title'    => 'Footer',
+  //     'parent_slug'   => 'theme-general-settings',
+  // ));
+}
