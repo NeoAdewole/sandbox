@@ -2,7 +2,7 @@
 
 /**
  * Title: Default Footer
- * Slug: clearblocks/footer-default
+ * Slug: sandbox/footer-default
  * Categories: footer
  * Block Types: core/template-part/footer
  */
@@ -17,8 +17,8 @@
       <?php
       printf(
         /* Translators: WordPress link. */
-        esc_html__('Powered by %s', 'clearblocks'),
-        '<a href="' . esc_url(__('https://clearcutcomms.ca', 'clearblocks')) . '" target="_blank" rel="nofollow">Clear Cut</a>'
+        esc_html__('Powered by %s', 'cc-sandbox'),
+        '<a href="' . esc_url(__('https://clearcutcomms.ca', 'cc-sandbox')) . '" target="_blank" rel="nofollow">Clear Cut</a>'
       )
       ?>
     </p>
