@@ -9,6 +9,20 @@
  * @since 1.0.0
  */
 
+// Variables
+
+
+// Includes
+include(get_theme_file_path('/includes/front/enqueue.php'));
+include(get_theme_file_path('/includes/front/head.php'));
+include(get_theme_file_path('/includes/setup.php'));
+include(get_theme_file_path('/includes/class-tgm-plugin-activation.php'));
+
+// Hooks
+add_action('wp_enqueue_scripts', 'u_enqueue');
+add_action('wp_head', 'u_head', 5);
+add_action('after_setup_theme', 'sandbox_setup_theme');
+
 // Error logs wp_remote calls
 if (!function_exists('debug_wp_remote_post_and_get_request')) :
   function debug_wp_remote_post_and_get_request($response, $context, $class, $r, $url)
