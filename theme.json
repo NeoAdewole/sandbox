@@ -7,7 +7,7 @@
       "wideSize": "1100px"
     },
     "color": {
-      "text": false,
+      "text": true,
       "background": true,
       "link": false,
       "custom": false,
