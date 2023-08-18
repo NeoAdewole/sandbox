@@ -9,6 +9,29 @@
  * @since 1.0.0
  */
 
+// Variables
+
+// Setup
+function sandbox_setup_theme()
+{
+  add_theme_support('editor-styles');
+}
+
+add_editor_style([
+  'https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik:wght@300;400;500;700&display=swap',
+  'assets/bootstrap-icons/bootstrap-icons.css',
+  'assets/public/index.css',
+  'assets/editor.css'
+]);
+
+// Includes
+include(get_theme_file_path('/includes/front/enqueue.php'));
+include(get_theme_file_path('/includes/front/head.php'));
+
+// Hooks
+add_action('wp_enqueue_scripts', 'u_enqueue');
+add_action('wp_head', 'u_head', 5);
+
 // Error logs wp_remote calls
 if (!function_exists('debug_wp_remote_post_and_get_request')) :
   function debug_wp_remote_post_and_get_request($response, $context, $class, $r, $url)
