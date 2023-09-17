@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/9janeo/sandbox#readme",
   "devDependencies": {
+    "@wordpress/scripts": "^26.12.0",
     "browser-sync": "^2.29.3",
     "font-awesome": "^4.7.0",
     "nodemon": "^3.0.1",
