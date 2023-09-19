@@ -6,3 +6,6 @@ npm-debug.log
 .DS_Store
 **/.DS_Store
 .htaccess
+build/*
+!build/index.js
+!build/index.css
