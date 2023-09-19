@@ -5,8 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bs": "browser-sync start --config build/browser-sync.config.js",
-    "watch-bs": "npm-run-all --parallel bs watch-run-*",
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "build:custom": "wp-scripts build entry-one.js entry-two.js --output-path=custom",
+    "build:copy-php": "wp-scripts build --webpack-copy-php",
+    "build:custom-directory": "wp-scripts build --webpack-src-dir=custom-directory",
+    "bs": "browser-sync start --config src/browser-sync.config.cjs",
+    "watch-bs": "npm-run-all --parallel start bs watch-run-*",
     "watch-run-js": "nodemon --watch src/js/ --ext js --exec \"npm-run-all\""
   },
   "repository": {
@@ -20,9 +25,11 @@
   },
   "homepage": "https://github.com/9janeo/sandbox#readme",
   "devDependencies": {
+    "@wordpress/scripts": "^26.12.0",
     "browser-sync": "^2.29.3",
     "font-awesome": "^4.7.0",
     "nodemon": "^3.0.1",
     "npm-run-all": "^4.1.5"
-  }
+  },
+  "type": "module"
 }
