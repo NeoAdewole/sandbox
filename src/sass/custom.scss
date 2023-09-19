@@ -1,1 +1,6 @@
-body {}
+body {
+  .wp-block-site-title {
+    white-space: nowrap;
+    text-wrap: nowrap;
+  }
+}
