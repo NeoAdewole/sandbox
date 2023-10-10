@@ -20,8 +20,8 @@ include(get_theme_file_path('/includes/class-tgm-plugin-activation.php'));
 include(get_theme_file_path('/includes/register-plugins.php'));
 
 // Hooks
-add_action('wp_enqueue_scripts', 'u_enqueue');
-add_action('wp_head', 'u_head', 5);
+add_action('wp_enqueue_scripts', 'sandbox_enqueue');
+add_action('wp_head', 'sandbox_head', 5);
 add_action('after_setup_theme', 'sandbox_setup_theme');
 add_action('tgmpa_register', 'sandbox_register_plugins');
 

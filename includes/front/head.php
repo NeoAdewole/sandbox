@@ -1,6 +1,6 @@
 <?php
 
-function u_head()
+function sandbox_head()
 {
 ?>
   <link rel="preconnect" href="https://fonts.googleapis.com">
