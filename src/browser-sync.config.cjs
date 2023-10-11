@@ -1,5 +1,5 @@
 module.exports = {
-  "proxy": "https://niyiadewole.local/",
+  "proxy": "sandbox.local/",
   "notify": false,
   "files": ["../css/*.min.css", "../js/*.min.js", "../**/*.php", "../theme.json", "../**/*.html"]
 };
