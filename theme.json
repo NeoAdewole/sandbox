@@ -45,12 +45,12 @@
         {
           "name": "Whiteish",
           "slug": "whiteish",
-          "color": "#EFEFE"
+          "color": "#EFEFEF"
         },
         {
           "name": "Primary",
           "slug": "primary",
-          "color": "#D1D1E4"
+          "color": "#663399"
         },
         {
           "name": "Secondary",
@@ -61,6 +61,11 @@
           "name": "Purple",
           "slug": "purple",
           "color": "#663399"
+        },
+        {
+          "name": "Contrast",
+          "slug": "contrast",
+          "color": "#996633"
         }
       ]
     },
@@ -135,38 +140,21 @@
       "fontSize": "var(--wp--preset--font-size--normal)",
       "lineHeight": "1.5"
     },
+    "color": {
+      "background": "var(--wp--preset--color--whiteish)",
+      "text": "var(--wp--preset--color--blackish)"
+    },
     "blocks": {
-      "core/group": {
-        "elements": {
-          "link": {
-            "color": {
-              "text": "var(--wp--preset--color--contrast)"
-            },
-            "typography": {
-              "textDecoration": "underline"
-            },
-            ":focus": {
-              "typography": {
-                "textDecoration": "underline"
-              }
-            }
-          }
-        }
-      },
       "core/paragraph": {
         "typography": {
           "fontSize": "var(--wp--preset--font-size--normal)"
         }
       }
     },
-    "color": {
-      "background": "var(--wp--preset--color--blackish)",
-      "text": "var(--wp--preset--color--purple)"
-    },
     "elements": {
       "link": {
         "color": {
-          "text": "var(--wp--preset--color--contrast)"
+          "text": "var(--wp--preset--color--purple)"
         },
         "typography": {
           "textDecoration": "underline"

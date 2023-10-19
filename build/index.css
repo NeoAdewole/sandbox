@@ -144,11 +144,6 @@ abbr:where([title]) {
   text-decoration: underline dotted;
 }
 
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
-
 b,
 strong {
   font-weight: bolder;
@@ -199,6 +194,7 @@ textarea {
   color: inherit;
   margin: 0;
   padding: 0;
+  border-radius: 5px;
 }
 
 button,
@@ -247,22 +243,6 @@ progress {
 
 summary {
   display: list-item;
-}
-
-blockquote,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-figure,
-p,
-pre {
-  margin: 0;
 }
 
 fieldset {
