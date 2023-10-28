@@ -9,6 +9,22 @@
  * @since 1.0.0
  */
 
+// Variables
+
+
+// Includes
+include(get_theme_file_path('/includes/front/enqueue.php'));
+include(get_theme_file_path('/includes/front/head.php'));
+include(get_theme_file_path('/includes/setup.php'));
+include(get_theme_file_path('/includes/class-tgm-plugin-activation.php'));
+include(get_theme_file_path('/includes/register-plugins.php'));
+
+// Hooks
+add_action('wp_enqueue_scripts', 'sandbox_enqueue');
+add_action('wp_head', 'sandbox_head', 5);
+add_action('after_setup_theme', 'sandbox_setup_theme');
+add_action('tgmpa_register', 'sandbox_register_plugins');
+
 // Error logs wp_remote calls
 if (!function_exists('debug_wp_remote_post_and_get_request')) :
   function debug_wp_remote_post_and_get_request($response, $context, $class, $r, $url)
@@ -57,3 +73,28 @@ function sandbox_styles()
   );
 }
 add_action('wp_enqueue_scripts', 'sandbox_styles');
+
+// Custom ACF functions for block theme
+/**
+ * Add 'custom Settings' page to WP admin Settings menu
+ */
+if (function_exists('acf_add_options_page')) {
+  acf_add_options_page(array(
+    'parent_slug'   => 'options-general.php',
+    'page_title'    => __('Custom Settings'),
+    'menu_title'    => __('Custom Settings'),
+    'menu_slug'     => 'custom-theme-settings',
+    'capability'    => 'edit_posts',
+    'redirect'      => false
+  ));
+  // acf_add_options_sub_page(array(
+  //     'page_title'    => 'Theme Header Settings',
+  //     'menu_title'    => 'Header',
+  //     'parent_slug'   => 'theme-general-settings',
+  // ));
+  // acf_add_options_sub_page(array(
+  //     'page_title'    => 'Theme Footer Settings',
+  //     'menu_title'    => 'Footer',
+  //     'parent_slug'   => 'theme-general-settings',
+  // ));
+}
