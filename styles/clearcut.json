@@ -159,7 +159,7 @@
       },
       "core/navigation": {
         "color": {
-          "text": "var(--wp--preset--color--pop)"
+          "text": "var(--wp--preset--color--primary)"
         }
       }
     },
