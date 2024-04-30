@@ -16,6 +16,10 @@ function sandbox_enqueue()
     'sandbox_theme',
     get_theme_file_uri('build/index.css')
   );
+  wp_register_style(
+    'sandbox_block_assets',
+    get_theme_file_uri('build/blocks/index.css')
+  );
   wp_register_script(
     'sandbox_theme',
     get_theme_file_uri('build/index.js')

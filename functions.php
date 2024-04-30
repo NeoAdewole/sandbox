@@ -10,14 +10,17 @@
  */
 
 // Variables
+define('SANDBOX__DIR', get_template_directory());
+define('SANDBOX__BLOCK_DIR', get_template_directory().'/build/blocks/');
 
 
 // Includes
 include(get_theme_file_path('/includes/front/enqueue.php'));
 include(get_theme_file_path('/includes/front/head.php'));
 include(get_theme_file_path('/includes/setup.php'));
-include(get_theme_file_path('/includes/class-tgm-plugin-activation.php'));
 include(get_theme_file_path('/includes/register-plugins.php'));
+include(get_theme_file_path('/includes/register-blocks.php'));
+include(get_theme_file_path('/includes/class-tgm-plugin-activation.php'));
 
 // Hooks
 add_action('wp_enqueue_scripts', 'sandbox_enqueue');
