@@ -1,6 +1,6 @@
 .block-editor-block-list__block.wp-block-custom-cut-slide {
   display: flex;
-  min-width: 100%;
+  min-width: fit-content;
 }
 
 .wp-block-custom-cut-slide.edit {

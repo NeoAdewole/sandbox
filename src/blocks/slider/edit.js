@@ -1,4 +1,4 @@
-import { useBlockProps, InspectorControls, InnerBlocks, store as blockStore } from '@wordpress/block-editor';
+import { useBlockProps, InspectorControls, InnerBlocks, useInnerBlocksProps, store as blockStore } from '@wordpress/block-editor';
 import { PanelBody, ToggleControl, __experimentalNumberControl as NumberControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { useSelect } from '@wordpress/data';
@@ -26,8 +26,24 @@ export default function ({ attributes, setAttributes, clientId }) {
   const blockProps = useBlockProps({
     dataCurrent: current ? current : start,
     dataInterval: slideInterval,
-    count: slideCount
+    count: slideCount,
+    className: 'carouselGrande'
   });
+
+  const innerBlocksProps = useInnerBlocksProps(blockProps, {
+    allowedBlocks: ['custom-cut/slide'],
+    template: [
+      ['custom-cut/slide',
+        {
+          name: 'Example Slide',
+          title: 'Example slide title',
+          slideCopy: 'Empty copy for the slider dem',
+          image: 'https://picsum.photos/768/300'
+        }
+      ]
+    ],
+    orientation: 'horizontal'
+  })
 
   return (
     <>
