@@ -10,14 +10,17 @@
  */
 
 // Variables
+define('SANDBOX__DIR', get_template_directory());
+define('SANDBOX__BLOCK_DIR', get_template_directory() . '/build/blocks/');
 
 
 // Includes
 include(get_theme_file_path('/includes/front/enqueue.php'));
 include(get_theme_file_path('/includes/front/head.php'));
 include(get_theme_file_path('/includes/setup.php'));
-include(get_theme_file_path('/includes/class-tgm-plugin-activation.php'));
 include(get_theme_file_path('/includes/register-plugins.php'));
+include(get_theme_file_path('/includes/register-blocks.php'));
+include(get_theme_file_path('/includes/class-tgm-plugin-activation.php'));
 
 // Hooks
 add_action('wp_enqueue_scripts', 'sandbox_enqueue');
@@ -98,3 +101,84 @@ if (function_exists('acf_add_options_page')) {
   //     'parent_slug'   => 'theme-general-settings',
   // ));
 }
+
+function get_cat_id_by_slug($slugs = [])
+{
+  foreach ($slugs as $slug) {
+    $category = get_category_by_slug($slug);
+    $cat_ids[] = (int) $category->term_id;
+  }
+  return $cat_ids;
+}
+
+
+// Get first image from post when featured image is missing
+/**
+ * 
+ */
+// function sandbox_get_image_src($object, $field_name, $request)
+function sandbox_get_image_src($query)
+{
+  // Slugs to exclude in query
+  $slugs = array("publication", "newsletter");
+  // $excludeids = get_cat_id_by_slug($slugs);
+  if ($query->is_main_query() && $query->is_archive()) {
+    // $query->set( 'category__not_in', $excludeids );
+    print_r($query);
+  }
+  // return;
+  // if ($query['featured_media'] == 0) {
+  //   return $query['featured_media'];
+  // }
+  // $feat_img_array = wp_get_attachment_image_src($query['featured_media'], 'thumbnail', true);
+  // return $feat_img_array[0];
+}
+// add_action('pre_get_posts', 'sandbox_get_image_src');
+
+// function wporg_debug()
+// {
+//   echo '<p>' . current_action() . '</p>';
+// }
+// add_action('all', 'wporg_debug');
+
+
+function sandbox_set_default_thumbnail($post)
+{
+  if ($post->post_type != 'post') {
+    return;
+  }
+
+  $cover_id = get_template_directory_uri() . '/assets/sandbox.png';
+  print_r($post);
+  print_r($cover_id);
+
+  // if (!has_post_thumbnail($post->ID)) {
+  //   $thumbnail_url = $cover_id;
+  //   $thumbnail_id = attachment_url_to_postid($thumbnail_url);
+
+  //   set_post_thumbnail($post->ID, $thumbnail_id);
+  // }
+}
+// add_action('rest_after_insert', 'sandbox_set_default_thumbnail', 10, 3);
+
+
+function add_fallback_thumbnails_to_post($hooked_block_types, $relative_position, $anchor_block_type, $context)
+{
+  // post-featured-image
+  if ('before' === $relative_position && 'core/post-title' === $anchor_block_type && 'single' === $context->slug) {
+    $hooked_block_types[] = 'clearblocks/social-summary';
+  }
+  return $hooked_block_types;
+}
+add_filter('hooked_block_types', 'add_fallback_thumbnails_to_post', 10, 4);
+
+
+function handle_archive_displays($query)
+{
+  if (is_main_query() && is_archive()) {
+    echo '<br/>';
+    print_r("You are on an archive!");
+    echo '<br/>';
+  }
+}
+// add_filter('archive_template', 'handle_archive_displays');
