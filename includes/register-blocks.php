@@ -3,7 +3,7 @@
 function sandbox_register_blocks()
 {
   $blocks = [
-    // ['name' => 'blocky'],
+    ['name' => 'blocky'],
     // ['name' => 'basic'],
     ['name' => 'character'],
     ['name' => 'slider'],
